@@ -1,0 +1,12 @@
+<h3> Would you like to submit a review? </h3>
+
+<%= form_for [@restaurant, @review], :url => restaurant_reviews_path do |f| %>
+
+ <%= f.label :rating%>
+ <%= f.text_field :rating, required: true %>
+
+<%= f.label :body %>
+<%= f.text_field :body, required: true%>
+
+<%= f.submit 'Submit'%>
+<% end %>

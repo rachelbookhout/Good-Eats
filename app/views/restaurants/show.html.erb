@@ -5,3 +5,8 @@
 <h5> <%= @restaurant.address %>, <%= @restaurant.city %>, <%=@restaurant.state %> <%=@restaurant.zipcode%> </h5>
 
 <p><%= @restaurant.description %></p>
+
+<% @reviews.each do |review| %>
+<h5> Score: <%= review.rating %> </h5>
+<p><%= review.body %></p>
+<%end%>
