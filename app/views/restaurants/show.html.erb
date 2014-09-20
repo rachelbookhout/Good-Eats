@@ -1,19 +1,21 @@
+<div class = "restaurant-info">
 <h1><%=@restaurant.name %></h1>
 
-<h5> <%= @restaurant.category %></h5>
+<h4> <%= @restaurant.category %></h4>
 
-<h5> <%= @restaurant.address %>, <%= @restaurant.city %>, <%=@restaurant.state %> <%=@restaurant.zipcode%> </h5>
+<h4> <%= @restaurant.address %>, <%= @restaurant.city %>, <%=@restaurant.state %> <%=@restaurant.zipcode%> </h4>
 
-<p><%= @restaurant.description %></p>
+<p id= "description"> - <%= @restaurant.description %> - </p>
+</div>
 
-
-<h3> Reviews! </h3>
+<h3> Reviews</h3>
 
 <p><%= link_to 'Add a new review', new_restaurant_review_path(@restaurant) %></p>
 
 <% @reviews.each do |review| %>
-<h5> Score: <%= review.rating %> </h5>
+<div class = "reviews">
 <p><%= review.body %></p>
+<h5> Score: <%= review.rating %> </h5>
 <%end%>
-
+</div>
 <%= link_to 'Back', root_url %>

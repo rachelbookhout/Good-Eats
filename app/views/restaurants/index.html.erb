@@ -1,11 +1,12 @@
+<div class = "restaurant-info">
 <h1>Restaurants in Boston</h1>
 <ul>
 <% @restaurants.each do |restaurant| %>
-<li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+<li><h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3></li>
 <% end %>
 </ul>
 
 <p><%= link_to 'Add a new restaurant', new_restaurant_path(@restaurant) %></p>
 
-
+</div>
 

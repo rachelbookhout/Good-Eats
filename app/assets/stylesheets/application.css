@@ -17,3 +17,30 @@ label,input{
   text-decoration:none;
   display: block;
 }
+
+a:link {
+  color: blue;
+}
+a:visited {
+  color: black;
+}
+ul{
+list-style-type: none;
+}
+
+h1, h3, h4, #description{
+text-align: center;
+font-family: Arial;
+}
+
+
+
+.reviews{
+    background: #F0F8FF;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.restaurant-info{
+background: #F0E890
+}

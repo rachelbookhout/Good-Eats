@@ -3,7 +3,6 @@ class ReviewsController < ApplicationController
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review = Review.new
-    #tests params
   end
 
   def create
@@ -13,7 +12,7 @@ class ReviewsController < ApplicationController
     @review.restaurant_id = id
     if @review.save
       redirect_to @restaurant
-     else
+    else
      render 'new'
     end
   end
