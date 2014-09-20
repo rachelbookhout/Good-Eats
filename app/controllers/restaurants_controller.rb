@@ -7,11 +7,12 @@ class RestaurantsController < ApplicationController
 
   def show
   @restaurant = Restaurant.find(params[:id])
-  @reviews = Review.all#.order(created_at: :desc).where(review_id:"#{id}")
+  @reviews = Review.all.order(created_at: :desc).where(restaurant_id:"#{@restaurant.id}")
   end
 
   def new
     @restaurant = Restaurant.new
+    #test params
   end
 
   def create

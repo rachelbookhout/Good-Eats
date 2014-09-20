@@ -6,6 +6,11 @@
 
 <p><%= @restaurant.description %></p>
 
+
+<h3> Reviews! </h3>
+
+<p><%= link_to 'Add a new review', new_restaurant_review_path(@restaurant) %></p>
+
 <% @reviews.each do |review| %>
 <h5> Score: <%= review.rating %> </h5>
 <p><%= review.body %></p>
