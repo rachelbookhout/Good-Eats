@@ -1,7 +1,7 @@
 class RestaurantsController < ApplicationController
 
   def index
-    @restaurants = Restaurant.all
+  @restaurants = Restaurant.all.order(created_at: :desc).limit(10)
   #order them by when they were updated, show only 10
   end
 
@@ -12,7 +12,6 @@ class RestaurantsController < ApplicationController
 
   def new
     @restaurant = Restaurant.new
-    #test params
   end
 
   def create
@@ -20,7 +19,8 @@ class RestaurantsController < ApplicationController
       if @restaurant.save
         redirect_to @restaurant
       else
-        render :new
+      flash[:notice] = "Please enter all fields with a rating between 1-5"
+      render :new
       end
   end
 

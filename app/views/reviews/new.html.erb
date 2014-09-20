@@ -2,6 +2,15 @@
 
 <%= form_for [@restaurant, @review], :url => restaurant_reviews_path do |f| %>
 
+<% if @review.errors.any? %>
+<h2>Errors </h2>
+<ul>
+<% @review.errors.full_messages.each do |message|%>
+<li><%= message %> </li>
+<%end%>
+</ul>
+<%end%>
+
  <%= f.label :rating%>
  <%= f.text_field :rating, required: true %>
 
@@ -10,3 +19,5 @@
 
 <%= f.submit 'Submit'%>
 <% end %>
+
+<%= link_to 'Back', @restaurant  %>

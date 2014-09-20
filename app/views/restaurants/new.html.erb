@@ -1,4 +1,14 @@
+<h1> Tell us about your Restaurant </h1>
 <%= form_for @restaurant do |f| %>
+
+<% if @restaurant.errors.any? %>
+<h2>Errors </h2>
+<ul>
+<% @restaurant.errors.full_messages.each do |message|%>
+<li><%= message %> </li>
+<%end%>
+</ul>
+<%end%>
 
  <%= f.label :name %>
  <%= f.text_field :name, required: true %>
@@ -23,3 +33,5 @@
 
 <%= f.submit 'Submit'%>
 <% end %>
+
+<%= link_to 'Back', root_url %>
